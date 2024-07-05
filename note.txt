@@ -6,4 +6,25 @@ ran check
 adding docker:
     - creating Dockerfile
     (fix the issue of whl files being in root dir - done)
-    - add PostgreSQL
+    - create docker-compose.yml
+    - run cmd> docker build .
+    - run cmd> docker-compose up
+    - navigate to 127.0.0.1:8000 to see the home page
+
+adding PostgreSQL image to our Docker host:
+    - postgres13 image must be pulled and present
+    - add database adaptor (psycopg2-binary)
+    (psycopg-binary will suffice for our project, for larger projects psycopg3 can be used)
+    - add whl file to whl directory
+    - update Dockerfile to copy and install whl file
+    - update docker-compose.yml (add db service and a volume for data)
+    - update django's settings.py to use PostgreSQL
+    - run cmd> docker-compose up -d --build
+    - visit home page
+    - now run the migration to see if new database is working properly
+    - docker-compose exec web python manage.py migrate
+    - docker-compose exec web python manage createsuperuser
+    - admin-admin@example.com-1
+    (for these commands to work, cmd working dir must be in current project's dir)
+    - check if admin user was created successfully
+    - to bring containers down cmd> docker-compose down
