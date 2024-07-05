@@ -1,7 +1,9 @@
-generate basic Django app
-add docker file
-containerize it with python slim and PostgreSQL
-Dockerfile
-docker-compose.yml
+added venv
+added django project
+added pages app to hold the index page
+ran check
 
-task 01: install whl files from whl directory, not from root directory
+adding docker:
+    - creating Dockerfile
+    (fix the issue of whl files being in root dir - done)
+    - add PostgreSQL
