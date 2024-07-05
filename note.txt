@@ -1,0 +1,7 @@
+generate basic Django app
+add docker file
+containerize it with python slim and PostgreSQL
+Dockerfile
+docker-compose.yml
+
+task 01: install whl files from whl directory, not from root directory
